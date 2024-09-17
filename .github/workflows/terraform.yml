@@ -29,7 +29,7 @@ jobs:
         run: terraform init
 
       - name: Select Terraform Workspace
-        run: terraform workspace select dev
+        run: terraform workspace select -or-create dev
 
       - name: Terraform Format Check
         run: terraform fmt -check
