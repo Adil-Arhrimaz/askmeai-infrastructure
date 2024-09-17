@@ -40,9 +40,6 @@ jobs:
       - name: Terraform Plan
         run: terraform plan -out=plan.tfplan
 
-      - name: Terraform Plan Summary
-        run: terraform show -no-color plan.tfplan
-
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve plan.tfplan
