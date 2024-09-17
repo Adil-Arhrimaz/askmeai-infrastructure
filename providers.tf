@@ -7,6 +7,13 @@ terraform {
       version = ">= 5.46"
     }
   }
+
+  backend "s3" {
+    bucket  = "askmeai-terraform-state"
+    key     = "state/terraform.tfstate"
+    region  = "eu-west-1"
+    encrypt = true
+  }
 }
 
 provider "aws" {
